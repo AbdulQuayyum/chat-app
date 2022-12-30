@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, TextInput, Image, SafeAreaView, Touchab
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../Configurations/Firebase/Firebase";
 const bg = require("../../assets/Background/bg.png")
+const bg2 = require("../../assets/Background/bg2.png")
 
 export default function SignIn(navigation) {
 
@@ -18,7 +19,42 @@ export default function SignIn(navigation) {
   };
 
   return (
-    <div>SignIn</div>
+    <View style={styles.container}>
+      <Image source={bg2} style={styles.bg} />
+      <View style={styles.whiteSheet} />
+      <SafeAreaView style={styles.form}>
+        <Text style={styles.title}>Sign In</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter email"
+          autoCapitalize="none"
+          keyboardType="email-address"
+          textContentType="emailAddress"
+          autoFocus={true}
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter password"
+          autoCapitalize="none"
+          autoCorrect={false}
+          secureTextEntry={true}
+          textContentType="password"
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+        />
+        <TouchableOpacity style={styles.button} onPress={onHandleSignin}>
+          <Text style={{ fontWeight: 'bold', color: '#fff', fontSize: 18 }}> Sign In</Text>
+        </TouchableOpacity>
+        <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center', alignSelf: 'center' }}>
+          <Text style={{ color: 'gray', fontWeight: '600', fontSize: 14 }}>Don't have an account? </Text>
+          <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+            <Text style={{ color: 'grey', fontWeight: '600', fontSize: 14 }}> Sign Up</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    </View>
   )
 }
 
@@ -30,7 +66,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: "orange",
+    color: "grey",
     alignSelf: "center",
     paddingBottom: 24,
   },
@@ -42,12 +78,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 12,
   },
-  backImage: {
+  bg: {
     width: "100%",
-    height: 340,
+    height: 280,
     position: "absolute",
     top: 0,
-    resizeMode: 'cover',
+    resizeMode: 'contain',
   },
   whiteSheet: {
     width: '100%',
@@ -56,6 +92,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     backgroundColor: '#fff',
     borderTopLeftRadius: 60,
+    borderTopRightRadius: 60,
   },
   form: {
     flex: 1,
@@ -63,7 +100,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   button: {
-    backgroundColor: '#f57c00',
+    backgroundColor: 'grey',
     height: 58,
     borderRadius: 10,
     justifyContent: 'center',
