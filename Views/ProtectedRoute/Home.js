@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: Colors.gray,
+    shadowColor: Colors.black ,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
     shadowOpacity: .9,
     shadowRadius: 8,
     marginRight: 20,
-    marginBottom: 50,
+    marginBottom: 30,
   }
 });

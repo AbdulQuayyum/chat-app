@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Button, TextInput, Image, SafeAreaView, TouchableOpacity, StatusBar, Alert } from "react-native";
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../Configurations/Firebase/Firebase";
-const bg = require("../../assets/Background/bg.png")
 const bg2 = require("../../assets/Background/bg2.png")
 
-export default function SignIn(navigation) {
+export default function SignIn({ navigation }) {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -54,6 +53,7 @@ export default function SignIn(navigation) {
           </TouchableOpacity>
         </View>
       </SafeAreaView>
+      <StatusBar barStyle="light-content" />
     </View>
   )
 }

@@ -37,7 +37,7 @@ export default function Chat() {
           }}
           onPress={onSignOut}
         >
-          <AntDesign name="logout" size={24} color={colors.gray} style={{ marginRight: 10 }} />
+          <AntDesign name="logout" size={24} color={Colors.gray} style={{ marginRight: 10 }} />
         </TouchableOpacity>
       )
     });
@@ -77,6 +77,11 @@ export default function Chat() {
   }, []);
 
   return (
+    // <>
+    //   {messages.map(message => (
+    //     <Text key={message._id}>{message.text}</Text>
+    //   ))}
+    // </>
     <GiftedChat
       messages={messages}
       showAvatarForEveryMessage={false}
