@@ -80,10 +80,10 @@ const styles = StyleSheet.create({
   },
   bg: {
     width: "100%",
-    height: 340,
+    height: 280,
     position: "absolute",
     top: 0,
-    resizeMode: 'cover',
+    resizeMode: 'contain',
   },
   whiteSheet: {
     width: '100%',
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     backgroundColor: '#fff',
     borderTopLeftRadius: 60,
+    borderTopRightRadius: 60,
   },
   form: {
     flex: 1,
